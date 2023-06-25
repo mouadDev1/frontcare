@@ -4,7 +4,7 @@ const AuthPage = (props) => {
     e.preventDefault();
     const { value } = e.target[0];
     axios
-      .post("https://m-care-app.netlify.app/authenticate", { username: value })
+      .post("http://localhost:3001/authenticate", { username: value })
       .then((r) => props.onAuth({ ...r.data, secret: value }))
       .catch((e) => console.log("error", e));
   };
